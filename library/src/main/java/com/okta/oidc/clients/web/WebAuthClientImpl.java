@@ -149,6 +149,7 @@ class WebAuthClientImpl implements WebAuthClient {
                 Result result = mSyncAuthClient.signIn(activity, finalPayload);
                 processSignInResult(result);
             } catch (InterruptedException e) {
+                e.printStackTrace();
                 mDispatcher.submitResults(() -> {
                     if (mResultCb != null) {
                         mResultCb.onCancel();
