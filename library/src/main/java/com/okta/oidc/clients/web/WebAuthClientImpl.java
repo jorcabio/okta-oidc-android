@@ -188,6 +188,7 @@ class WebAuthClientImpl implements WebAuthClient {
                 Result result = mSyncAuthClient.signOutOfOkta(activity);
                 processSignOutResult(result);
             } catch (InterruptedException e) {
+                e.printStackTrace();
                 mDispatcher.submitResults(() -> {
                     if (mResultCb != null) {
                         mResultCb.onCancel();
